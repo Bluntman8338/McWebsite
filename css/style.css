@@ -1,0 +1,198 @@
+/* Reset and Body */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Light mode and Dark mode styling */
+body.light-mode {
+    background-color: #6e4820; /* Minecraft dirt brown */
+    color: #fff;
+}
+
+body.dark-mode {
+    background-color: #3e2914; /* Darker dirt for dark mode */
+    color: #ccc;
+}
+
+/* Header */
+header {
+    background-color: #5aab4f; /* Minecraft grass green */
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Adds depth to header */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.menu-toggle {
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #4e944f; /* Slightly darker grass green for the nav */
+}
+
+.navbar.hidden {
+    display: none;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #39723a; /* Dark hover for links */
+}
+
+/* Main Section */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Ensure the content starts from the top */
+    padding: 20px;
+    overflow: auto; /* Prevent overflow inside main */
+}
+
+/* Centering the image above the server status section */
+.image-container {
+    text-align: center;
+    margin-bottom: 20px; /* Add spacing below the image */
+}
+
+.centered-image {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto;
+}
+
+/* Server Status Section */
+#server-status {
+    width: 100%;
+    margin-bottom: 30px; /* Space between the server status and the toggle button */
+    text-align: center;
+}
+
+/* Center the Light/Dark Toggle */
+#toggle-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 20px 0; /* Add spacing above and below */
+}
+
+#toggleCanvas {
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Add some space between Players Online and Players List */
+#players-list-container {
+    margin-top: 20px; /* Add space of 20px between Players Online and Players List */
+}
+
+#players-list-container h2,
+#players-list li {
+    color: black; /* Set the text color to black */
+}
+
+/* Scrollable container for Players List */
+.scrollable-list {
+    max-height: 150px; /* Adjust this value as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc; /* Optional: border for visual separation */
+    padding: 10px;          /* Optional: padding for better readability */
+    background-color: #f9f9f9; /* Optional: background color */
+    width: 100%; /* Ensure container takes full width */
+    margin: 0 auto; /* Centers the list container */
+    display: block; /* Ensure the container is displayed as a block */
+}
+
+/* Player icon style */
+#players-list li {
+    display: flex;
+    align-items: center; /* Align items in the center */
+    margin-bottom: 5px;
+    word-wrap: break-word; /* Ensure long names don't break the layout */
+    color: black; /* Ensure the text is black */
+}
+
+#players-list li .player-icon {
+    width: 30px; /* Set the icon width */
+    height: 30px; /* Set the icon height */
+    margin-right: 10px; /* Space between icon and player name */
+    border-radius: 50%; /* Make the icon circular */
+}
+
+#players-list li .player-name {
+    font-weight: bold;
+    color: black; /* Set player name color */
+    font-size: 16px; /* Adjust font size if necessary */
+}
+
+/* Footer */
+footer {
+    background-color: #7d7d7d; /* Minecraft stone grey */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3); /* Adds depth to footer */
+}
+
+/* Ensure the whole page scrolls */
+html, body {
+    overflow-y: auto; 
+    overflow-x: hidden; /* Allow vertical scrolling */
+}
+
+/* Ensure the body stretches properly */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Optional: Add some styles for a visible effect when the list is empty */
+#players-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#players-list li {
+    background-color: #fff; /* For contrast and readability */
+    padding: 5px;
+    border-bottom: 1px solid #ccc; /* Slight border between each item */
+}

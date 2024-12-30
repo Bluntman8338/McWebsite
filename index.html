@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McServer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-mode">
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <h1>McServer</h1>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+        <nav id="navbar" class="navbar hidden">
+            <a href="index.html">Home</a>
+            <a href="commands-by-plugins.html">Commands by Plugins</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Image above the server status section -->
+        <div class="image-container">
+            <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Image" class="centered-image">
+        </div>
+        
+        <div>
+          <p>
+            Bob had a baby, it's a boy 
+          </p>
+        </div>
+
+        <!-- Server Status Section -->
+        <section id="server-status">
+            <h2>Server Status</h2>
+            <p>Status: <span id="status">Loading...</span></p>
+            <p>Players Online: <span id="players">Loading...</span></p><br>
+
+            <!-- Players List Section -->
+            <div id="players-list-container">
+                <h2>Players List:</h2>
+                <div class="scrollable-list">
+                    <ul id="players-list">
+                        <!-- Player names will be dynamically added here -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Light/Dark Mode Toggle Section -->
+    <div id="toggle-container">
+        <canvas id="toggleCanvas" width="50" height="50"></canvas>
+        <p id="toggleLabel">Light Mode</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Minecraft Server. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
