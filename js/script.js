@@ -76,7 +76,7 @@ applySavedPreference();
 // Fetch server status and update the DOM
 async function fetchServerStatus() {
     try {
-        const response = await fetch("https://api.mcsrvstat.us/2/snoogans.enderman.cloud:33518"); // Replace with your server IP or hostname
+        const response = await fetch("https://api.mcsrvstat.us/2/McServer8338.enderman.cloud :33518"); // Replace with your server IP or hostname
         const data = await response.json();
 
         const statusElement = document.getElementById("status");
