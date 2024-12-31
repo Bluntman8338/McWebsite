@@ -122,3 +122,40 @@ document.getElementById('commands-link').addEventListener('click', function(even
     const dropdown = document.querySelector('.dropdown');
     dropdown.classList.toggle('active');
 });
+
+async function updateServerButtons() {
+    try {
+        const response = await fetch("https://api.mcsrvstat.us/2/McServer8338.enderman.cloud:33518");
+        const data = await response.json();
+
+        const startButton = document.getElementById("start-button");
+        const renewButton = document.getElementById("renew-button");
+        const serverButtons = document.getElementById("server-buttons");
+
+        if (data.online) {
+            // Server is online - hide Start button
+            startButton.style.display = "none";
+            // Center the Renew button
+            renewButton.style.marginLeft = "0";
+        } else {
+            // Server is offline - show Start button
+            startButton.style.display = "inline-block";
+            // Adjust Renew button to the right
+            renewButton.style.marginLeft = "10px";
+        }
+    } catch (error) {
+        console.error("Error fetching server status:", error);
+    }
+}
+
+// Call the function and update every 60 seconds
+updateServerButtons();
+setInterval(updateServerButtons, 60000);
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert(`Copied: ${text}`);
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}

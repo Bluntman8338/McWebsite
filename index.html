@@ -11,9 +11,10 @@
 <body class="light-mode">
     <!-- Header Section -->
     <header>
-        <div class="nav-container">
-            <h1>McServer</h1>
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <div class="nav-container" style="display: flex; align-items: center;">
+            <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+            <h1 style="margin: 0;">McServer</h1>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" style="margin-left: auto;">☰</button>
         </div>
         <nav id="navbar" class="navbar hidden">
             <a href="index.html">Home</a>
@@ -21,7 +22,9 @@
             <div class="dropdown">
                 <a href="#" id="commands-link" class="dropdown-btn">Commands</a>
                 <div id="economy-container" class="dropdown-content">
-                    <a href="pages/economy.html">Economy</a>
+                    <a href="pages/economy.html"
+                   >Economy</a>
+                   <a href="pages/About.html">Home</a> 
                 </div>
             </div>
             <a href="#">About</a>
@@ -30,13 +33,29 @@
 
     <!-- Main Section -->
     <main>
-        <div class="image-container">
-            <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Image" class="centered-image">
-        </div>
         <section id="server-status">
             <h2>Server Status</h2>
             <p>Status: <span id="status">Loading...</span></p>
             <p>Players Online: <span id="players">Loading...</span></p><br>
+
+            <!-- Server Info Section -->
+            <div id="server-info">
+                <h2>Server Info</h2>
+                <p>
+                    IP: <span style="color: #E74287;">McServer8338.enderman.cloud</span>
+                    <button onclick="copyToClipboard('McServer8338.enderman.cloud')" style="margin-left: 5px; background: none; border: none; cursor: pointer;" aria-label="Copy IP">
+                        <img src="https://icon-library.com/images/copy-icon/copy-icon-14.jpg" alt="Copy Icon" style="width: 16px; height: 16px; filter: invert(1);">
+                    </button>
+                </p>
+                <p>
+                    Port: <span style="color: #E74287;">33518</span>
+                    <button onclick="copyToClipboard('33518')" style="margin-left: 5px; background: none; border: none; cursor: pointer;" aria-label="Copy Port">
+                        <img src="https://icon-library.com/images/copy-icon/copy-icon-14.jpg" alt="Copy Icon" style="width: 16px; height: 16px; filter: invert(1);">
+                    </button>
+                </p>
+            </div>
+
+            <!-- Players List Section -->
             <div id="players-list-container">
                 <h2>Players List:</h2>
                 <div class="scrollable-list">
@@ -46,8 +65,23 @@
                 </div>
             </div>
         </section>
+
+        <!-- Buttons Section -->
+        <div id="server-buttons" style="text-align: center; margin-top: 20px;">
+            <a id="start-button" href="https://freemcserver.net/server/1522682/start" target="_blank" style="text-decoration: none;">
+                <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                    Start Server
+                </button>
+            </a>
+            <a id="renew-button" href="https://freemcserver.net/server/1522682/renew" target="_blank" style="text-decoration: none; margin-left: 10px;">
+                <button style="background-color: #2196F3; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                    Renew Server
+                </button>
+            </a>
+        </div>
     </main>
 
+    <!-- Toggle Theme -->
     <div id="toggle-container">
         <canvas id="toggleCanvas" width="50" height="50"></canvas>
         <p id="toggleLabel">Light Mode</p>
@@ -58,5 +92,15 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Function to copy text to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`Copied: ${text}`);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
