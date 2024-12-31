@@ -18,12 +18,10 @@
         </div>
         <nav id="navbar" class="navbar hidden">
             <a href="index.html">Home</a>
-            <!-- Commands by Plugins link with dropdown -->
             <div class="dropdown">
                 <a href="#" id="commands-link" class="dropdown-btn">Commands</a>
                 <div id="economy-container" class="dropdown-content">
-                    <a href="pages/economy.html"
-                   >Economy</a>
+                    <a href="pages/economy.html">Economy</a>
                 </div>
             </div>
             <a href="About.html">About</a>
@@ -32,36 +30,37 @@
 
     <!-- Main Section -->
     <main>
-        <section id="server-status">
+        <!-- Server Info Section -->
+        <section id="server-info" style="text-align: center; margin-bottom: 30px;">
+            <h2>Server Info</h2>
+            <p>
+                IP: <span style="color: #E74287;">McServer8338.enderman.cloud</span>
+                <button onclick="copyToClipboard('McServer8338.enderman.cloud')" style="margin-left: 5px; background: none; border: none; cursor: pointer;" aria-label="Copy IP">
+                    <img src="https://icon-library.com/images/copy-icon/copy-icon-14.jpg" alt="Copy Icon" style="width: 16px; height: 16px; filter: invert(1);">
+                </button>
+            </p>
+            <p>
+                Port: <span style="color: #E74287;">33518</span>
+                <button onclick="copyToClipboard('33518')" style="margin-left: 5px; background: none; border: none; cursor: pointer;" aria-label="Copy Port">
+                    <img src="https://icon-library.com/images/copy-icon/copy-icon-14.jpg" alt="Copy Icon" style="width: 16px; height: 16px; filter: invert(1);">
+                </button>
+            </p>
+        </section>
+
+        <!-- Server Status Section -->
+        <section id="server-status" style="margin-bottom: 30px;">
             <h2>Server Status</h2>
             <p>Status: <span id="status">Loading...</span></p>
-            <p>Players Online: <span id="players">Loading...</span></p><br>
+            <p>Players Online: <span id="players">Loading...</span></p>
+        </section>
 
-            <!-- Server Info Section -->
-            <div id="server-info">
-                <h2>Server Info</h2>
-                <p>
-                    IP: <span style="color: #E74287;">McServer8338.enderman.cloud</span>
-                    <button onclick="copyToClipboard('McServer8338.enderman.cloud')" style="margin-left: 5px; background: none; border: none; cursor: pointer;" aria-label="Copy IP">
-                        <img src="https://icon-library.com/images/copy-icon/copy-icon-14.jpg" alt="Copy Icon" style="width: 16px; height: 16px; filter: invert(1);">
-                    </button>
-                </p>
-                <p>
-                    Port: <span style="color: #E74287;">33518</span>
-                    <button onclick="copyToClipboard('33518')" style="margin-left: 5px; background: none; border: none; cursor: pointer;" aria-label="Copy Port">
-                        <img src="https://icon-library.com/images/copy-icon/copy-icon-14.jpg" alt="Copy Icon" style="width: 16px; height: 16px; filter: invert(1);">
-                    </button>
-                </p>
-            </div>
-
-            <!-- Players List Section -->
-            <div id="players-list-container">
-                <h2>Players List:</h2>
-                <div class="scrollable-list">
-                    <ul id="players-list">
-                        <!-- Player names will be dynamically added here -->
-                    </ul>
-                </div>
+        <!-- Players List Section -->
+        <section id="players-list-container">
+            <h2 style="text-align: center;">Players List:</h2>
+            <div class="scrollable-list">
+                <ul id="players-list">
+                    <!-- Player names will be dynamically added here -->
+                </ul>
             </div>
         </section>
 
