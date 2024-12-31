@@ -86,7 +86,7 @@ async function fetchServerStatus() {
         if (data.players?.list?.length > 0) {
             data.players.list.forEach(player => {
                 const listItem = document.createElement("li");
-                listItem.textContent = `👤 ${player}`;
+                listItem.textContent = player; // No icon, just player name
                 playersListElement.appendChild(listItem);
             });
         } else {
@@ -152,10 +152,90 @@ async function updateServerButtons() {
 updateServerButtons();
 setInterval(updateServerButtons, 60000);
 
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        alert(`Copied: ${text}`);
-    }).catch(err => {
-        console.error('Failed to copy text: ', err);
+/**
+ * Players List Render with Xbox Profile Images (Using OpenXBL)
+ */
+const API_KEY = "e3d9df18-dd44-456f-92ee-bb9a690eb75c"; // Your API Key
+
+async function getPlayerXUID(playerName) {
+    const apiUrl = `https://xbl.io/api/v2/account/${playerName}`; // API to fetch player data
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'X-Authorization': `Bearer ${API_KEY}`, // Add API key in the Authorization header
+                'Accept': 'application/json' // Ensure the response is in JSON format
+            }
+        });
+        const playerData = await response.json();
+
+        if (response.ok) {
+            return playerData?.displayPicRaw; // Return the display picture URL
+        } else {
+            console.error(`Failed to fetch data for ${playerName}:`, playerData);
+            return null;
+        }
+    } catch (error) {
+        console.error(`Error fetching data for ${playerName}:`, error);
+        return null;
+    }
+}
+
+async function renderPlayers() {
+    const playerListElement = document.getElementById("players-list");
+    playerListElement.innerHTML = ""; // Clear previous content
+
+    const playerNames = ["PhillipJFry8504"]; // Hardcoded player name for now (replace with actual list)
+
+    // Add promises to fetch profile image for each player
+    const playerPromises = playerNames.map(async playerName => {
+        const displayPicUrl = await getPlayerXUID(playerName);
+        
+        if (!displayPicUrl) {
+            return null; // If no image found, skip
+        }
+
+        return {
+            name: playerName,
+            displayPicRaw: displayPicUrl // The URL for the player's display picture
+        };
+    });
+
+    const players = await Promise.all(playerPromises);
+
+    // Filter out players who failed to load
+    const validPlayers = players.filter(player => player !== null);
+
+    if (validPlayers.length === 0) {
+        playerListElement.innerHTML = "<p>No players online currently.</p>";
+        return;
+    }
+
+    // Render the player list with Xbox profile images
+    validPlayers.forEach(player => {
+        const listItem = document.createElement("li");
+        listItem.style.marginBottom = "10px";
+        listItem.style.display = "flex";
+        listItem.style.alignItems = "center";
+
+        // Create and append Xbox profile image
+        const imgElement = document.createElement("img");
+        imgElement.src = player.displayPicRaw; // The URL for the player's display picture
+        imgElement.alt = `${player.name} Xbox profile image`;
+        imgElement.style.width = "30px";  // Adjust size as needed
+        imgElement.style.height = "30px"; // Adjust size as needed
+        imgElement.style.borderRadius = "50%"; // Circular image
+
+        // Create player name element
+        const spanElement = document.createElement("span");
+        spanElement.textContent = player.name;
+        spanElement.style.marginLeft = "10px"; // Space between image and name
+
+        listItem.appendChild(imgElement);
+        listItem.appendChild(spanElement);
+        playerListElement.appendChild(listItem);
     });
 }
+
+renderPlayers();
