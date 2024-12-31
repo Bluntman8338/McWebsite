@@ -7,17 +7,31 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#5aab4f">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="McServer - Your Minecraft Hub">
+    <meta property="og:description" content="Join our Minecraft server! IP: McServer8338.enderman.cloud, Port: 33518. Start or renew the server and check the players online.">
+    <meta property="og:image" content="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="McServer - Your Minecraft Hub">
+    <meta name="twitter:description" content="Join our Minecraft server! IP: McServer8338.enderman.cloud, Port: 33518. Start or renew the server and check the players online.">
+    <meta name="twitter:image" content="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png">
 </head>
 <body class="light-mode">
     <!-- Header Section -->
     <header>
         <div class="nav-container" style="display: flex; align-items: center;">
-            <img src="https://i.gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+            <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
             <h1 style="margin: 0;">McServer</h1>
             <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" style="margin-left: auto;">☰</button>
         </div>
         <nav id="navbar" class="navbar hidden">
             <a href="index.html">Home</a>
+            <!-- Commands by Plugins link with dropdown -->
             <div class="dropdown">
                 <a href="#" id="commands-link" class="dropdown-btn">Commands</a>
                 <div id="economy-container" class="dropdown-content">
@@ -31,36 +45,36 @@
     <!-- Main Section -->
     <main>
         <!-- Server Info Section -->
-        <section id="server-info" style="text-align: center; margin-bottom: 30px;">
+        <section id="server-info" style="text-align: center; margin: 20px 0;">
             <h2>Server Info</h2>
             <p>
                 IP: <span style="color: #E74287;">McServer8338.enderman.cloud</span>
                 <button onclick="copyToClipboard('McServer8338.enderman.cloud')" style="margin-left: 5px; background: none; border: none; cursor: pointer;" aria-label="Copy IP">
-                    <img src="https://icon-library.com/images/copy-icon/copy-icon-15.jpg" alt="Copy Icon" style="width: 16px; height: 16px;">
+                    <img src="https://icon-library.com/images/copy-icon/copy-icon-14.jpg" alt="Copy Icon" style="width: 16px; height: 16px; filter: invert(1);">
                 </button>
             </p>
             <p>
                 Port: <span style="color: #E74287;">33518</span>
                 <button onclick="copyToClipboard('33518')" style="margin-left: 5px; background: none; border: none; cursor: pointer;" aria-label="Copy Port">
-                    <img src="https://icon-library.com/images/copy-icon/copy-icon-15.jpg" alt="Copy Icon" style="width: 16px; height: 16px;">
+                    <img src="https://icon-library.com/images/copy-icon/copy-icon-14.jpg" alt="Copy Icon" style="width: 16px; height: 16px; filter: invert(1);">
                 </button>
             </p>
         </section>
 
         <!-- Server Status Section -->
-        <section id="server-status" style="margin-bottom: 30px;">
+        <section id="server-status" style="text-align: center;">
             <h2>Server Status</h2>
             <p>Status: <span id="status">Loading...</span></p>
-            <p>Players Online: <span id="players">Loading...</span></p>
-        </section>
+            <p>Players Online: <span id="players">Loading...</span></p><br>
 
-        <!-- Players List Section -->
-        <section id="players-list-container">
-            <h2 style="text-align: center;">Players List:</h2>
-            <div class="scrollable-list">
-                <ul id="players-list">
-                    <!-- Player names and images will be dynamically added here -->
-                </ul>
+            <!-- Players List Section -->
+            <div id="players-list-container">
+                <h2>Players List:</h2>
+                <div class="scrollable-list">
+                    <ul id="players-list">
+                        <!-- Player names will be dynamically added here -->
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -86,10 +100,7 @@
     </div>
 
     <footer>
-        <p>&copy; McServer 2024<br>
-Powered By <a href="https://poggit.pmmp.io/plugins" target="_blank" style="color: #0000EE; text-decoration: underline;">PocketMine</a>
-<br>
-Not affiliated with © Mojang AB 2009 - 2024</p>
+        <p>&copy; 2024 Minecraft Server. All rights reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>
@@ -102,68 +113,6 @@ Not affiliated with © Mojang AB 2009 - 2024</p>
                 console.error('Failed to copy text: ', err);
             });
         }
-
-        // Fallback image for player avatars
-        const fallbackImage = "https://i.gyazo.com/05696b64c09dcab6caeab7416d051257.png";
-
-        // Fetch Xbox profile image
-        async function fetchXboxProfileImage(gamertag) {
-            try {
-                const response = await fetch(`https://xbl.io/api/v2/account?gamertag=${gamertag}`, {
-                    headers: {
-                        Authorization: "Bearer e3d9df18-dd44-456f-92ee-bb9a690eb75c", // Replace with your API key
-                    },
-                });
-                const data = await response.json();
-                return data.profile.avatar || fallbackImage;
-            } catch (error) {
-                console.error(`Failed to fetch profile image for ${gamertag}:`, error);
-                return fallbackImage;
-            }
-        }
-
-        // Render the player list dynamically
-        async function renderPlayers() {
-            const playerListElement = document.getElementById("players-list");
-            playerListElement.innerHTML = ""; // Clear previous content
-
-            // Replace with your actual list of players
-            const onlinePlayers = []; // Empty by default; dynamically populate this list if needed
-
-            if (onlinePlayers.length === 0) {
-                playerListElement.innerHTML = "<p>No players online currently.</p>";
-                return;
-            }
-
-            for (const gamertag of onlinePlayers) {
-                const profileImage = await fetchXboxProfileImage(gamertag);
-
-                const listItem = document.createElement("li");
-                listItem.style.display = "flex";
-                listItem.style.alignItems = "center";
-                listItem.style.marginBottom = "10px";
-
-                const imgElement = document.createElement("img");
-                imgElement.src = profileImage;
-                imgElement.alt = `${gamertag}'s Avatar`;
-                imgElement.style.width = "32px";
-                imgElement.style.height = "32px";
-                imgElement.style.borderRadius = "50%";
-                imgElement.style.marginRight = "10px";
-                imgElement.onerror = () => {
-                    imgElement.src = fallbackImage;
-                };
-
-                const spanElement = document.createElement("span");
-                spanElement.textContent = gamertag;
-
-                listItem.appendChild(imgElement);
-                listItem.appendChild(spanElement);
-                playerListElement.appendChild(listItem);
-            }
-        }
-
-        renderPlayers();
     </script>
 </body>
 </html>
