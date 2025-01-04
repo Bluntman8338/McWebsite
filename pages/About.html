@@ -1,14 +1,227 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McServer</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#5aab4f">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="McServer - Your Minecraft Hub">
+    <meta property="og:description" content="Join our Minecraft server! IP: McServer8338.enderman.cloud, Port: 33518. Start or renew the server and check the players online.">
+    <meta property="og:image" content="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="McServer - Your Minecraft Hub">
+    <meta name="twitter:description" content="Join our Minecraft server! IP: McServer8338.enderman.cloud, Port: 33518. Start or renew the server and check the players online.">
+    <meta name="twitter:image" content="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png">
+
+    <style>
+        /* Streamlined Menu Styling */
+        
+        html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+body.light-mode {
+    background-color: #6e4820;
+    color: #fff;
+}
+
+body.dark-mode {
+    background-color: #3e2914;
+    color: #ccc;
+}
+
+        .nav-container {
+            background-color: #3C5114; /* Dark green background */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add slight shadow */
+        }
+
+        .nav-container h1 {
+            font-size: 1.5em;
+            color: #fff;
+            margin: 0;
+        }
+
+        .menu-toggle {
+            font-size: 1.5em;
+            background: none;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+
+        .navbar a {
+            color: #FFF; /* White for Home and About links */
+            text-decoration: none;
+            padding: 8px 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            border: 2px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFF; /* White highlight */
+            background:#8E3C2E ;
+            border-color: #FFF; /* White border */
+        }
+
+        .dropdown {
+            position: relative;
+            width: 100%;
+        }
+
+        .dropdown-btn {
+            background: #3C5114; /* Dark green */
+            color: #fff;
+            border: 2px solid #3C5114; /* Light green border */
+            padding: 12px 15px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+            border-radius: 6px;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #3C5114; /* Light green */
+            border-color: #3C5114; /* Dark green */
+            transform: translateX(5px);
+        }
+
+        .container {
+            background-color: #7d7d7d; /* Stone Gery*/
+            color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            border: 2px solid #7d7d7d; /* Stone Grey */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .container a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 6px;
+            background-color: #FFAA00; /* Light green */
+            transition: background-color 0.3s;
+        }
+
+        .container a:hover {
+            background-color: #41C4F7; /* Slightly darker blue */
+        }
+
+        .hidden {
+            display: none;
+        }
+        
+        /* Footer */
+footer {
+    background-color: #7d7d7d;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+    </style>
 </head>
-
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+            <h1>McServer</h1>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+        <nav id="navbar" class="navbar hidden">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button id="commands-link" class="dropdown-btn">Commands</button>
+                <div id="commands-container" class="container hidden">
+                    <a href="pages/economy.html">Economy</a>
+                </div>
+            </div>
+            <a href="About.html">About</a>
+        </nav>
+    </header>
+    
+    <!-- Main Section -->
+  <div style="text-align: left; margin: 0 auto; max-width: 800px; background: var(--bg-container); padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); color: var(--text-color);">  <main>
 
+        <h1>About McServer</h1>
+        <p>Welcome to McServer! This is a private Minecraft server built for our kids and their cousins. Learn about commands, server status, and more!</p>
+    </main>
+</div>
+
+    <footer>
+        <p>&copy; McServer 2024<br>
+            Powered By <a href="https://poggit.pmmp.io/plugins" target="_blank" style="color: #0000EE; text-decoration: underline;">PocketMine</a>
+            <br>
+            Not affiliated with © Mojang AB 2009 - 2024
+        </p>
+    </footer>
+
+    <script>
+        // Apply the saved light/dark mode
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        document.body.classList.add(savedTheme);
+
+        // Handle menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+        const commandsLink = document.getElementById('commands-link');
+        const commandsContainer = document.getElementById('commands-container');
+        const economyContainer = document.getElementById('economy-container');
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            navbar.classList.toggle('hidden');
+        });
+
+        commandsLink.addEventListener('click', (event) => {
+            event.stopPropagation();
+            commandsContainer.classList.toggle('hidden');
+            economyContainer.classList.add('hidden'); // Ensure nested menu stays hidden
+        });
+
+        commandsContainer.addEventListener('click', (event) => {
+            event.stopPropagation();
+            economyContainer.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', () => {
+            navbar.classList.add('hidden');
+            commandsContainer.classList.add('hidden');
+            economyContainer.classList.add('hidden');
+        });
+    </script>
 </body>
-
 </html>
