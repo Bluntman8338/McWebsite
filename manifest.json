@@ -1,7 +1,7 @@
 {
   "name": "McServer",
   "short_name": "McServer",
-  "start_url": "/index.html",
+  "start_url": "../index.html",
   "display": "standalone",
   "background_color": "#6e4820",
   "theme_color": "#5aab4f",
