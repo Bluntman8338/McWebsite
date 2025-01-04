@@ -2,10 +2,10 @@ const CACHE_NAME = "mcserver-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/css/style.css",
-  "/js/script.js",
-  "/path-to-icon/icon-192x192.png",
-  "/path-to-icon/icon-512x512.png"
+  "/pages/economy.html",
+  "/pages/About.html",
+  "/Assets/Server-Logo.png",
+  "/Assets/Server-Logo.png"
 ];
 
 // Install the service worker and cache files
