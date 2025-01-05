@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#5aab4f">
+
+  <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Template">
+    <meta property="og:description" content="Join our Minecraft server! Start or renew the server and check the Server commands & see who's online.">
+    <meta property="og:image" content="https://gyazo.com/d14b7ad86e86d894884b9a6230403304.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Template">
+    <meta name="twitter:description" content="Join our Minecraft server! Start or renew the server and check the Server commands & see who's online.">
+    <meta name="twitter:image" content="https://gyazo.com/d14b7ad86e86d894884b9a6230403304.png">
+
+    <link rel="stylesheet" href="../Assets/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+            <h1>McServer</h1>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+        <nav id="navbar" class="navbar hidden">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+                <button id="commands-link" class="dropdown-btn">Commands</button>
+                <div id="commands-container" class="container hidden">
+                    <a href="../pages/economy.html">Economy</a>
+                </div>
+            </div>
+            <a href="../pages/About.html">About</a>
+        </nav>
+    </header>
+    
+    <main>
+    <section id="group-starter-commands" style="text-align: center; margin: 20px;">
+        <h2>Groups & Starter Kit Commands</h2>
+        <p>Commands for managing groups and claiming starter kits.</p>
+        <div style="text-align: left; margin: 0 auto; max-width: 800px; background: var(--bg-container); padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); color: var(--text-color);">
+            <h3><u>Group Commands</u></h3>
+            <ul>
+                <li><code>/group join &lt;group_name&gt;</code> – Join an existing group.</li>
+                <li><code>/group leave</code> – Leave your current group.</li>
+                <li><code>/group list</code> – Display a list of all groups.</li>
+            </ul><br>
+            <h3><u>Starter Kit</u></h3>
+            <ul>
+                <li><code>/starterkit claim</code> – Claim your starter kit.</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+    <footer>
+        <p>&copy; McServer 2024<br>
+            Powered By <a href="https://poggit.pmmp.io/plugins" target="_blank" style="color: #0000EE; text-decoration: underline;">PocketMine</a>
+            <br>
+            Not affiliated with © Mojang AB 2009 - 2024
+        </p>
+    </footer>
+
+    <script src="../Assets/script.js"></script>
+</body>
+</html>
