@@ -4,8 +4,10 @@ const urlsToCache = [
   "/index.html",
   "/pages/economy.html",
   "/pages/About.html",
-  "/Assets/Server-Logo.png",
-  "/Assets/Server-Logo.png"
+  "/Assets/Images/Server-Logo.png",
+  "/Assets/Images/Server-Logo_64x64.png",
+  "/Assets/Images/Server-Logo_192x192.png",
+  "/Assets/Images/Server-Logo_512x512.png",
 ];
 
 // Install the service worker and cache files

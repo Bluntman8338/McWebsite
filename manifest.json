@@ -1,5 +1,5 @@
 {
-  "name": "McServer",
+  "name": "McServer8338",
   "short_name": "McServer",
   "start_url": "../index.html",
   "display": "standalone",
@@ -7,12 +7,12 @@
   "theme_color": "#5aab4f",
   "icons": [
     {
-      "src": "/Assets/Server-Logo.png",
+      "src": "/Assets/Images/Server-Logo_192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/Assets/Server-Logo.png",
+      "src": "/Assets/Images/Server-Logo_512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
