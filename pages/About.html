@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McServer/About</title>
+    <link rel="stylesheet" href="Assets/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#5aab4f">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+            <h1>McServer</h1>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+        <nav id="navbar" class="navbar hidden">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+                <button id="commands-link" class="dropdown-btn">Commands</button>
+                <div id="commands-container" class="main-container hidden">
+                    <div class="container" id="default-container">
+                        <a href="../pages/default.html">Default Commands</a>
+                    </div>
+                    <div class="container" id="economy-container">
+                        <a href="../pages/economy.html">Economy Commands</a>
+                    </div>
+                    <div class="container" id="starterkit-container">
+                        <a href="../pages/groups-starterkit.html">Groups & StarterKit Commands</a>
+                    </div>
+                </div>
+            </div>
+            <a href="../pages/About.html">About</a>
+        </nav>
+    </header>
+
+      <style>
+/* General Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+body.light-mode {
+    background-color: #6e4820;
+    color: #fff;
+}
+
+body.dark-mode {
+    background-color: #3e2914;
+    color: #ccc;
+}
+
+/* Header Styles */
+.nav-container {
+    background-color: #3C5114;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container h1 {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0;
+}
+
+.menu-toggle {
+    font-size: 1.5em;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.navbar a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 8px 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.navbar a:hover {
+    color: #FFF;
+    background: #8E3C2E;
+    border-color: #FFF;
+}
+
+/* Dropdown and Container Styling */
+.dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-btn {
+    background: #3C5114;
+    color: #fff;
+    border: 2px solid #3C5114;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    border-radius: 6px;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.dropdown-btn:hover {
+    background-color: #3C5114;
+    border-color: #3C5114;
+    transform: translateX(5px);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #555;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 2px solid #555;
+}
+
+.container {
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+#default-container {
+    background-color: #FFAA00;
+    border: 2px solid #FFAA00;
+}
+
+#default-container:hover {
+    background-color: #FFD700;
+}
+
+#economy-container {
+    background-color: #41C4F7;
+    border: 2px solid #41C4F7;
+}
+
+#economy-container:hover {
+    background-color: #1E90FF;
+}
+
+#starterkit-container {
+    background-color: #8A2BE2;
+    border: 2px solid #8A2BE2;
+}
+
+#starterkit-container:hover {
+    background-color: #9932CC;
+}
+
+/* Hidden Element */
+.hidden {
+    display: none;
+}
+
+    
+/* Main Section */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Server Status Section */
+#server-status {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#players-list-container {
+    margin-top: 20px;
+}
+
+.scrollable-list {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+#players-list li {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Toggle Styles */
+#toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#toggleCanvas {
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+        
+        /* Footer */
+footer {
+    background-color: #7d7d7d;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+            </style>
+    
+    <!-- Main Section -->
+ <main>
+        <h1>About McServer</h1>
+        <p>Welcome to McServer! This is a private Minecraft server built for our kids and their cousins. Learn about commands, server status, and more!</p>
+    </main>
+
+
+
+<footer>
+  <p>&copy; McServer 2024<br>
+    Powered By <a href="https://poggit.pmmp.io/plugins" target="_blank" style="color: #0000EE; text-decoration: underline;">PocketMine</a>
+    <br>
+    Not affiliated with © Mojang AB 2009 - 2024
+  </p>
+</footer>
+
+        <script>
+        // Apply the saved light/dark mode
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        document.body.classList.add(savedTheme);
+
+        // Menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+const commandsLink = document.getElementById('commands-link');
+const commandsContainer = document.getElementById('commands-container');
+
+menuToggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    navbar.classList.toggle('hidden');
+});
+
+commandsLink.addEventListener('click', (event) => {
+    event.stopPropagation();
+    commandsContainer.classList.toggle('hidden');
+});
+
+document.addEventListener('click', () => {
+    navbar.classList.add('hidden');
+    commandsContainer.classList.add('hidden');
+});
+
+        
+        /**
+ * Server Status Fetch
+ */
+async function fetchServerStatus() {
+    try {
+        const response = await fetch("https://api.mcsrvstat.us/2/McServer8338.enderman.cloud:33518");
+        const data = await response.json();
+
+        const statusElement = document.getElementById("status");
+        const playersElement = document.getElementById("players");
+        const playersListElement = document.getElementById("players-list");
+
+        statusElement.textContent = data.online ? "🟢 Online" : "🔴 Offline";
+        const currentPlayers = data.players?.online || 0;
+        const maxPlayers = data.players?.max || 0;
+        playersElement.textContent = `${currentPlayers}/${maxPlayers}`;
+
+        playersListElement.innerHTML = "";
+        if (data.players?.list?.length > 0) {
+            data.players.list.forEach(player => {
+                const listItem = document.createElement("li");
+                listItem.textContent = player; // No icon, just player name
+                playersListElement.appendChild(listItem);
+            });
+        } else {
+            playersListElement.innerHTML = "<li>No players online</li>";
+        }
+    } catch (error) {
+        document.getElementById("status").textContent = "🔴 Error fetching data";
+        document.getElementById("players").textContent = "N/A";
+    }
+}
+
+// Fetch server status on load and refresh every 60 seconds
+fetchServerStatus();
+setInterval(fetchServerStatus, 60000);
+
+/**
+ * Update Server Buttons
+ */
+async function updateServerButtons() {
+    try {
+        const response = await fetch("https://api.mcsrvstat.us/2/McServer8338.enderman.cloud:33518");
+        const data = await response.json();
+
+        const startButton = document.getElementById("start-button");
+        const renewButton = document.getElementById("renew-button");
+
+        if (data.online) {
+            startButton.style.display = "none";
+            renewButton.style.marginLeft = "0";
+        } else {
+            startButton.style.display = "inline-block";
+            renewButton.style.marginLeft = "10px";
+        }
+    } catch (error) {
+        console.error("Error fetching server status:", error);
+    }
+}
+
+// Call the function and update every 60 seconds
+updateServerButtons();
+setInterval(updateServerButtons, 60000);
+
+/**
+ * Light/Dark Mode Toggle
+ */
+const canvas = document.getElementById("toggleCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = 50;
+canvas.height = 50;
+
+// Functions to draw light/dark mode icons
+function drawSun() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#FFA500";
+    ctx.beginPath();
+    ctx.arc(25, 25, 10, 0, 2 * Math.PI);
+    ctx.fill();
+}
+
+function drawMoon() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(25, 25, 10, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.fillStyle = "#121212";
+    ctx.beginPath();
+    ctx.arc(20, 20, 8, 0, 2 * Math.PI);
+    ctx.fill();
+}
+
+// Apply saved theme preference
+function applySavedPreference() {
+    const savedMode = localStorage.getItem("theme") || "light-mode";
+    const body = document.body;
+    const label = document.getElementById("toggleLabel");
+
+    if (savedMode === "dark-mode") {
+        body.classList.replace("light-mode", "dark-mode");
+        label.textContent = "Dark Mode";
+        drawMoon();
+    } else {
+        body.classList.replace("dark-mode", "light-mode");
+        label.textContent = "Light Mode";
+        drawSun();
+    }
+}
+
+// Toggle theme
+document.getElementById("toggle-container").addEventListener("click", () => {
+    const body = document.body;
+    const label = document.getElementById("toggleLabel");
+
+    if (body.classList.contains("light-mode")) {
+        body.classList.replace("light-mode", "dark-mode");
+        label.textContent = "Dark Mode";
+        drawMoon();
+        localStorage.setItem("theme", "dark-mode");
+    } else {
+        body.classList.replace("dark-mode", "light-mode");
+        label.textContent = "Light Mode";
+        drawSun();
+        localStorage.setItem("theme", "light-mode");
+    }
+});
+// Apply theme on load
+applySavedPreference();
+
+
+// PWA SERVICE WORKER //
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch((error) => {
+        console.error('Service Worker registration failed:', error);
+      });
+  }
+        </script>
+<script>
+  // Dynamically load the header
+  fetch('/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading header:', error));
+</script>
+<script src="/Assets/script.js"></script>
+</body>
+
+</html>
