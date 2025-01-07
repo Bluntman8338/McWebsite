@@ -164,9 +164,7 @@ if ('serviceWorker' in navigator) {
       .catch((error) => {
         console.error('Service Worker registration failed:', error);
       });
-  }
-        </script>
-<script>
+    
   // Dynamically load the header
   fetch('/header.html')
     .then(response => response.text())
