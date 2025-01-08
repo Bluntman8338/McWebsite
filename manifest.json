@@ -4,7 +4,7 @@
   "start_url": "../index.html",
   "display": "standalone",
   "background_color": "#6e4820",
-  "theme_color": "#5aab4f",
+  "theme_color": "#3C5114",
   "icons": [
     {
       "src": "/Assets/Images/Server-Logo/Server-Logo_192x192.png",
