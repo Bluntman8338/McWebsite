@@ -172,4 +172,4 @@ if ('serviceWorker' in navigator) {
       document.getElementById('header-container').innerHTML = data;
     })
     .catch(error => console.error('Error loading header:', error));
-</script>
+}

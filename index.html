@@ -277,7 +277,7 @@ document.getElementById("toggle-container").addEventListener("click", () => {
 applySavedPreference();
 
 
-        <!-- Copy to Clipboard -->
+        // Copy to Clipboard 
 function copyToClipboard(content) {
     navigator.clipboard.writeText(content).then(() => {
         showCustomAlert(`Copied: ${content}`);
@@ -299,7 +299,7 @@ function showCustomAlert(message) {
     </script>
     
     <script>
-// PWA SERVICE WORKER //
+// PWA SERVICE WORKER 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js')
       .then((registration) => {
