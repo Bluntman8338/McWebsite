@@ -1,131 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groups & Starter Kit Cmds - McServer</title>
-    <link rel="stylesheet" href="../Assets/styles.css">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#5aab4f">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McServer/Cmds/Groups&Kits</title>
+  <link rel="stylesheet" href="Assets/styles.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#5aab4f">
+
   <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="McServer - Economy Cmds">
-    <meta property="og:description" content="Join our Minecraft server! Start or renew the server and check the Server commands & see who's online.">
-    <meta property="og:image" content="https://gyazo.com/d14b7ad86e86d894884b9a6230403304.png">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta property="og:type" content="website">
+  <meta property="og:title" content="McServer - Groups and Starter Kit">
+  <meta property="og:description" content="Join our Minecraft server! Start or renew the server and check the Server commands & see who's online.">
+  <meta property="og:image" content="https://gyazo.com/d14b7ad86e86d894884b9a6230403304.png">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:type" content="website">
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="McServer - Economy Cmds">
-    <meta name="twitter:description" content="Join our Minecraft server! Start or renew the server and check the Server commands & see who's online.">
-    <meta name="twitter:image" content="https://gyazo.com/d14b7ad86e86d894884b9a6230403304.png">
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="McServer - Groups & Starter Kit">
+  <meta name="twitter:description" content="Join our Minecraft server! Start or renew the server and check the Server commands & see who's online.">
+  <meta name="twitter:image" content="https://gyazo.com/d14b7ad86e86d894884b9a6230403304.png">
 </head>
+
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="nav-container">
-            <a href="../index.html">
-                <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" 
-                     alt="Minecraft Server Logo" 
-                     style="width: 50px; height: 50px; margin-right: 10px;">
-            </a>
-            <h1>McServer</h1>
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  <!-- Header Section -->
+  <header>
+    <div class="nav-container">
+      <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+      <h1>McServer</h1>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav id="navbar" class="navbar hidden">
+      <a href="../index.html">Home</a>
+      <div class="dropdown">
+        <button id="commands-link" class="dropdown-btn">Commands</button>
+        <div id="commands-container" class="main-container hidden">
+          <div class="container" id="default-container">
+            <a href="../pages/default.html">Default Commands</a>
+          </div>
+          <div class="container" id="economy-container">
+            <a href="../pages/economy.html">Economy Commands</a>
+          </div>
+          <div class="container" id="starterkit-container">
+            <a href="../pages/groups-and-starterkit.html">Groups & StarterKit Commands</a>
+          </div>
         </div>
-        <nav id="navbar" class="navbar hidden">
-            <a href="../index.html">Home</a>
-            <div class="dropdown">
-                <button id="commands-link" class="dropdown-btn">Commands</button>
-                <div id="commands-container" class="main-container hidden">
-                    <div class="container" id="default-container">
-                        <a href="../pages/default.html">Default Commands</a>
-                    </div>
-                    <div class="container" id="economy-container">
-                        <a href="../pages/economy.html">Economy Commands</a>
-                    </div>
-                    <div class="container" id="starterkit-container">
-                        <a href="../pages/groups-and-starterkit.html">Groups & StarterKit Commands</a>
-                    </div>
-                </div>
-            </div>
-            <a href="../pages/About.html">About</a>
-        </nav>
-    </header>
-    
-        <!-- Main Section -->
-<main>
-            <h2>Economy Commands</h2>
-            <p>Explore all commands for managing the in-game economy, from banking to rewards.</p>
- 
-                <h3><u>Advanced Bounty</u></h3>
-                <ul>
-                    <li><code>/bounty list</code> – View all active bounties.</li>
-                    <li><code>/bounty set &lt;player&gt; &lt;amount&gt;</code> – Place a bounty on another player.</li>
-                    <li><code>/bounty claim</code> – Claim a bounty reward after fulfilling a bounty.</li>
-                </ul><br>
-                <h3><u>Bank</u></h3>
-                <ul>
-                    <li><code>/bank open</code> – Opens your bank UI.</li>
-                    <li><code>/bank deposit &lt;amount&gt;</code> – Deposit money into your bank account.</li>
-                    <li><code>/bank withdraw &lt;amount&gt;</code> – Withdraw money from your bank account.</li>
-                    <li><code>/bank balance</code> – Check your bank balance.</li>
-                </ul><br>
-                <h3><u>Economy</u></h3>
-                <ul>
-                    <li><code>/balance</code> – Check your current balance.</li>
-                    <li><code>/pay &lt;player&gt; &lt;amount&gt;</code> – Transfer money to another player.</li>
-                </ul><br>
-                <h3><u>Rewards</u></h3>
-                <ul>
-                    <li><code>/rewards</code> – Open the rewards menu.</li>
-                    <li><code>/rewards daily</code> – Claim daily rewards.</li>
-                    <li><code>/rewards weekly</code> – Claim weekly rewards.</li>
-                </ul>
-            </div>
-        </section>
-</main>
+      </div>
+      <a href="../pages/About.html">About</a>
+    </nav>
+  </header>
 
-<footer>
-  <p>&copy; Mc8338 2024<br>
-    Powered By <a href="https://poggit.pmmp.io/plugins" target="_blank" style="color: #0000EE; text-decoration: underline;">PocketMine</a>
-    <br>
-    Not affiliated with © Mojang AB 2009 - 2024
-  </p>
-</footer>
+  <style>
+    /* General Styling */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
 
-        <script>
-        // Apply the saved light/dark mode
-        const savedTheme = localStorage.getItem('theme') || 'light-mode';
-        document.body.classList.add(savedTheme);
+    body.light-mode {
+      background-color: #6e4820;
+      color: #fff;
+    }
 
-        // Menu toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navbar = document.getElementById('navbar');
-const commandsLink = document.getElementById('commands-link');
-const commandsContainer = document.getElementById('commands-container');
+    body.dark-mode {
+      background-color: #3e2914;
+      color: #ccc;
+    }
 
-menuToggle.addEventListener('click', (event) => {
-    event.stopPropagation();
-    navbar.classList.toggle('hidden');
-});
+    /* Header Styles */
+    .nav-container {
+      background-color: #3C5114;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
 
-commandsLink.addEventListener('click', (event) => {
-    event.stopPropagation();
-    commandsContainer.classList.toggle('hidden');
-});
+    .nav-container h1 {
+      font-size: 1.5em;
+      color: #fff;
+      margin: 0;
+    }
 
-document.addEventListener('click', () => {
-    navbar.classList.add('hidden');
-    commandsContainer.classList.add('hidden');
-});
+    .menu-toggle {
+      font-size: 1.5em;
+      background: none;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
 
-        
-        /**
- * Server Status Fetch
- */
-async function fetchServerStatus() {
-    try {
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+
+    .navbar a {
+      color: #FFF;
+      text-decoration: none;
+      padding: 8px 10px;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 2px solid transparent;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #FFF;
+      background: #8E3C2E;
+      border-color: #FFF;
+    }
+
+    /* Dropdown and Container Styling */
+    .dropdown {
+      position: relative;
+      width: 100%;
+    }
+
+    .dropdown-btn {
+      background: #3C5114;
+      color: #fff;
+      border: 2px solid #3C5114;
+      padding: 12px 15px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      border-radius: 6px;
+      transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+    }
+
+    .dropdown-btn:hover {
+      background-color: #3C5114;
+      border-color: #3C5114;
+      transform: translateX(5px);
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #555;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 2px solid #555;
+    }
+
+    .container {
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    #default-container {
+      background-color: #FFAA00;
+      border: 2px solid #FFAA00;
+    }
+
+    #default-container:hover {
+      background-color: #FFD700;
+    }
+
+    #economy-container {
+      background-color: #41C4F7;
+      border: 2px solid #41C4F7;
+    }
+
+    #economy-container:hover {
+      background-color: #1E90FF;
+    }
+
+    #starterkit-container {
+      background-color: #8A2BE2;
+      border: 2px solid #8A2BE2;
+    }
+
+    #starterkit-container:hover {
+      background-color: #9932CC;
+    }
+
+    /* Hidden Element */
+    .hidden {
+      display: none;
+    }
+
+
+    /* Main Section */
+    main {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Server Status Section */
+    #server-status {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #players-list-container {
+      margin-top: 20px;
+    }
+
+    .scrollable-list {
+      max-height: 150px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+      width: 100%;
+    }
+
+    #players-list li {
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* Toggle Styles */
+    #toggle-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    #toggleCanvas {
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #7d7d7d;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+
+  <!-- Main Section -->
+  <main>
+    <h2 style="text-align: center;">Groups & Starter Kit Commands</h2>
+
+    <p>Commands for managing groups and claiming starter kits.</p>
+    <h3><u>Group Commands</u></h3>
+    <ul>
+      <li><code>/group join &lt;group_name&gt;</code> – Join an existing group.</li>
+      <li><code>/group leave</code> – Leave your current group.</li>
+      <li><code>/group list</code> – Display a list of all groups.</li>
+    </ul><br>
+    <h3><u>Starter Kit</u></h3>
+    <ul>
+      <li><code>/starterkit claim</code> – Claim your starter kit.</li>
+    </ul>
+    </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; McServer 2024<br>
+      Powered By <a href="https://poggit.pmmp.io/plugins" target="_blank" style="color: #0000EE; text-decoration: underline;">PocketMine</a>
+      <br>
+      Not affiliated with © Mojang AB 2009 - 2024
+    </p>
+  </footer>
+
+  <script>
+    // Apply the saved light/dark mode
+    const savedTheme = localStorage.getItem('theme') || 'light-mode';
+    document.body.classList.add(savedTheme);
+
+    // Menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    const commandsLink = document.getElementById('commands-link');
+    const commandsContainer = document.getElementById('commands-container');
+
+    menuToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      navbar.classList.toggle('hidden');
+    });
+
+    commandsLink.addEventListener('click', (event) => {
+      event.stopPropagation();
+      commandsContainer.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      navbar.classList.add('hidden');
+      commandsContainer.classList.add('hidden');
+    });
+
+
+    /**
+     * Server Status Fetch
+     */
+    async function fetchServerStatus() {
+      try {
         const response = await fetch("https://api.mcsrvstat.us/2/McServer8338.enderman.cloud:33518");
         const data = await response.json();
 
@@ -140,29 +331,29 @@ async function fetchServerStatus() {
 
         playersListElement.innerHTML = "";
         if (data.players?.list?.length > 0) {
-            data.players.list.forEach(player => {
-                const listItem = document.createElement("li");
-                listItem.textContent = player; // No icon, just player name
-                playersListElement.appendChild(listItem);
-            });
+          data.players.list.forEach(player => {
+            const listItem = document.createElement("li");
+            listItem.textContent = player; // No icon, just player name
+            playersListElement.appendChild(listItem);
+          });
         } else {
-            playersListElement.innerHTML = "<li>No players online</li>";
+          playersListElement.innerHTML = "<li>No players online</li>";
         }
-    } catch (error) {
+      } catch (error) {
         document.getElementById("status").textContent = "🔴 Error fetching data";
         document.getElementById("players").textContent = "N/A";
+      }
     }
-}
 
-// Fetch server status on load and refresh every 60 seconds
-fetchServerStatus();
-setInterval(fetchServerStatus, 60000);
+    // Fetch server status on load and refresh every 60 seconds
+    fetchServerStatus();
+    setInterval(fetchServerStatus, 60000);
 
-/**
- * Update Server Buttons
- */
-async function updateServerButtons() {
-    try {
+    /**
+     * Update Server Buttons
+     */
+    async function updateServerButtons() {
+      try {
         const response = await fetch("https://api.mcsrvstat.us/2/McServer8338.enderman.cloud:33518");
         const data = await response.json();
 
@@ -170,109 +361,110 @@ async function updateServerButtons() {
         const renewButton = document.getElementById("renew-button");
 
         if (data.online) {
-            startButton.style.display = "none";
-            renewButton.style.marginLeft = "0";
+          startButton.style.display = "none";
+          renewButton.style.marginLeft = "0";
         } else {
-            startButton.style.display = "inline-block";
-            renewButton.style.marginLeft = "10px";
+          startButton.style.display = "inline-block";
+          renewButton.style.marginLeft = "10px";
         }
-    } catch (error) {
+      } catch (error) {
         console.error("Error fetching server status:", error);
+      }
     }
-}
 
-// Call the function and update every 60 seconds
-updateServerButtons();
-setInterval(updateServerButtons, 60000);
+    // Call the function and update every 60 seconds
+    updateServerButtons();
+    setInterval(updateServerButtons, 60000);
 
-/**
- * Light/Dark Mode Toggle
- */
-const canvas = document.getElementById("toggleCanvas");
-const ctx = canvas.getContext("2d");
-canvas.width = 50;
-canvas.height = 50;
+    /**
+     * Light/Dark Mode Toggle
+     */
+    const canvas = document.getElementById("toggleCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 50;
+    canvas.height = 50;
 
-// Functions to draw light/dark mode icons
-function drawSun() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#FFA500";
-    ctx.beginPath();
-    ctx.arc(25, 25, 10, 0, 2 * Math.PI);
-    ctx.fill();
-}
+    // Functions to draw light/dark mode icons
+    function drawSun() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#FFA500";
+      ctx.beginPath();
+      ctx.arc(25, 25, 10, 0, 2 * Math.PI);
+      ctx.fill();
+    }
 
-function drawMoon() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#fff";
-    ctx.beginPath();
-    ctx.arc(25, 25, 10, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.fillStyle = "#121212";
-    ctx.beginPath();
-    ctx.arc(20, 20, 8, 0, 2 * Math.PI);
-    ctx.fill();
-}
+    function drawMoon() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#fff";
+      ctx.beginPath();
+      ctx.arc(25, 25, 10, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.fillStyle = "#121212";
+      ctx.beginPath();
+      ctx.arc(20, 20, 8, 0, 2 * Math.PI);
+      ctx.fill();
+    }
 
-// Apply saved theme preference
-function applySavedPreference() {
-    const savedMode = localStorage.getItem("theme") || "light-mode";
-    const body = document.body;
-    const label = document.getElementById("toggleLabel");
+    // Apply saved theme preference
+    function applySavedPreference() {
+      const savedMode = localStorage.getItem("theme") || "light-mode";
+      const body = document.body;
+      const label = document.getElementById("toggleLabel");
 
-    if (savedMode === "dark-mode") {
+      if (savedMode === "dark-mode") {
         body.classList.replace("light-mode", "dark-mode");
         label.textContent = "Dark Mode";
         drawMoon();
-    } else {
+      } else {
         body.classList.replace("dark-mode", "light-mode");
         label.textContent = "Light Mode";
         drawSun();
+      }
     }
-}
 
-// Toggle theme
-document.getElementById("toggle-container").addEventListener("click", () => {
-    const body = document.body;
-    const label = document.getElementById("toggleLabel");
+    // Toggle theme
+    document.getElementById("toggle-container").addEventListener("click", () => {
+      const body = document.body;
+      const label = document.getElementById("toggleLabel");
 
-    if (body.classList.contains("light-mode")) {
+      if (body.classList.contains("light-mode")) {
         body.classList.replace("light-mode", "dark-mode");
         label.textContent = "Dark Mode";
         drawMoon();
         localStorage.setItem("theme", "dark-mode");
-    } else {
+      } else {
         body.classList.replace("dark-mode", "light-mode");
         label.textContent = "Light Mode";
         drawSun();
         localStorage.setItem("theme", "light-mode");
+      }
+    });
+    // Apply theme on load
+    applySavedPreference();
+  </script>
+
+  <script>
+    // PWA SERVICE WORKER //
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
     }
-});
-// Apply theme on load
-applySavedPreference();
-</script>
-<script>
-// PWA SERVICE WORKER //
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then((registration) => {
-        console.log('Service Worker registered with scope:', registration.scope);
+  </script>
+  <script>
+    // Dynamically load the header
+    fetch('/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
       })
-      .catch((error) => {
-        console.error('Service Worker registration failed:', error);
-      });
-  }
-        </script>
-<script>
-  // Dynamically load the header
-  fetch('/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-container').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading header:', error));
-</script>
-<script src="/Assets/script.js"></script>
+      .catch(error => console.error('Error loading header:', error));
+  </script>
+  <script src="/Assets/script.js"></script>
 </body>
 
 </html>
