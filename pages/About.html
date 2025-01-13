@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>McServer/About</title>
-  <link rel="stylesheet" href="Assets/styles.css">
+  <title>About - McServer</title>
+  <link rel="stylesheet" href="../Assets/styles.css">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#5aab4f">
 
@@ -26,248 +26,72 @@
 <body>
   <!-- Header Section -->
   <header>
-  <div class="nav-container">
-    <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
-    <h1>McServer</h1>
-    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
-  </div>
-  <nav id="navbar" class="navbar hidden">
-    <a href="../index.html">Home</a>
-    <div class="dropdown">
-      <button id="commands-link" class="dropdown-btn">Commands</button>
-      <div id="commands-container" class="main-container hidden">
-        <div class="container" id="default-container">
-          <a href="../pages/default.html">Default Commands</a>
-        </div>
-        <div class="container" id="economy-container">
-          <a href="../pages/economy.html">Economy Commands</a>
-        </div>
-        <div class="container" id="starterkit-container">
-          <a href="../pages/groups-and-starterkit.html">Groups & StarterKit Commands</a>
+    <div class="nav-container">
+      <a href="../index.html">
+        <img src="https://gyazo.com/76be0c27ea780ffb598944f5a3983385.png" alt="Minecraft Server Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+      </a>
+      <h1>McServer</h1>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav id="navbar" class="navbar hidden">
+      <a href="../index.html">Home</a>
+      <div class="dropdown">
+        <button id="commands-link" class="dropdown-btn">Commands</button>
+        <div id="commands-container" class="main-container hidden">
+          <div class="container" id="default-container">
+            <a href="../pages/default.html">Default Commands</a>
+          </div>
+          <div class="container" id="economy-container">
+            <a href="../pages/economy.html">Economy Commands</a>
+          </div>
+          <div class="container" id="starterkit-container">
+            <a href="../pages/groups-and-starterkit.html">Groups & StarterKit Commands</a>
+          </div>
         </div>
       </div>
-    </div>
-    <a href="../pages/About.html">About</a>
-  </nav>
+      <a href="../pages/About.html">About</a>
+    </nav>
   </header>
-
-  <style>
-    /* General Styling */
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-    }
-
-    body.light-mode {
-      background-color: #6e4820;
-      color: #fff;
-    }
-
-    body.dark-mode {
-      background-color: #3e2914;
-      color: #ccc;
-    }
-
-    /* Header Styles */
-    .nav-container {
-      background-color: #3C5114;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-container h1 {
-      font-size: 1.5em;
-      color: #fff;
-      margin: 0;
-    }
-
-    .menu-toggle {
-      font-size: 1.5em;
-      background: none;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* Navbar Styling */
-    .navbar {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 10px;
-    }
-
-    .navbar a {
-      color: #FFF;
-      text-decoration: none;
-      padding: 8px 10px;
-      font-size: 1rem;
-      font-weight: 500;
-      border: 2px solid transparent;
-      transition: color 0.3s, border-color 0.3s;
-    }
-
-    .navbar a:hover {
-      color: #FFF;
-      background: #8E3C2E;
-      border-color: #FFF;
-    }
-
-    /* Dropdown and Container Styling */
-    .dropdown {
-      position: relative;
-      width: 100%;
-    }
-
-    .dropdown-btn {
-      background: #3C5114;
-      color: #fff;
-      border: 2px solid #3C5114;
-      padding: 12px 15px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      text-align: left;
-      width: 100%;
-      border-radius: 6px;
-      transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
-    }
-
-    .dropdown-btn:hover {
-      background-color: #3C5114;
-      border-color: #3C5114;
-      transform: translateX(5px);
-    }
-
-    .main-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background-color: #555;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 2px solid #555;
-    }
-
-    .container {
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s, background-color 0.3s;
-    }
-
-    #default-container {
-      background-color: #FFAA00;
-      border: 2px solid #FFAA00;
-    }
-
-    #default-container:hover {
-      background-color: #FFD700;
-    }
-
-    #economy-container {
-      background-color: #41C4F7;
-      border: 2px solid #41C4F7;
-    }
-
-    #economy-container:hover {
-      background-color: #1E90FF;
-    }
-
-    #starterkit-container {
-      background-color: #8A2BE2;
-      border: 2px solid #8A2BE2;
-    }
-
-    #starterkit-container:hover {
-      background-color: #9932CC;
-    }
-
-    /* Hidden Element */
-    .hidden {
-      display: none;
-    }
-
-
-    /* Main Section */
-    main {
-      flex: 1;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* Server Status Section */
-    #server-status {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    #players-list-container {
-      margin-top: 20px;
-    }
-
-    .scrollable-list {
-      max-height: 150px;
-      overflow-y: auto;
-      border: 1px solid #ccc;
-      padding: 10px;
-      background-color: #f9f9f9;
-      width: 100%;
-    }
-
-    #players-list li {
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #000;
-    }
-
-    /* Toggle Styles */
-    #toggle-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 20px 0;
-    }
-
-    #toggleCanvas {
-      cursor: pointer;
-      border-radius: 50%;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Footer */
-    footer {
-      background-color: #7d7d7d;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      margin-top: auto;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
-    }
-  </style>
 
   <!-- Main Section -->
   <main>
     <h1>About McServer</h1>
-    <p>Welcome to McServer! This is a private Minecraft server built for our kids and their cousins. Learn about commands, server status, and more!</p>
+    <p style="text-align: center ">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
   </main>
 
+  <div style="display: flex; justify-content: center; align-items: center; gap: 25px;">
+    <!-- Disboard Bump Link -->
+    <a href="https://disboard.org/server/bump/1326842580721336402" target="_blank" rel="noopener noreferrer">
+      <img src="https://gyazo.com/5ad01ee2bd4d1891934450bbca56264c.jpeg" alt="Disboard Server Page" style="background-color: transparent; width: 150px; height: 50px; border: none;">
+    </a>
+  </div>
 
+
+  <div style="display: flex; justify-content: center; align-items: center; gap: 25px;">
+    <!-- Discord Server Invite -->
+    <a href="https://discord.gg/rdkA27c4" target="_blank" rel="noopener noreferrer">
+      <img src="https://gyazo.com/2066f67b31e35c465efdf6f7ee3a2b49.png" alt="Join our Discord" style="background-color: transparent; width: 50px; height: 50; border: none;">
+    </a>
+    <!-- Disboard Server Page -->
+    <a href="https://disboard.org/server/1326842580721336402" target="_blank" rel="noopener noreferrer">
+      <img src="https://gyazo.com/58ea49a54499454aa817992b0bf4ef68.png" alt="Disboard Server Page" style="background-color: transparent; width: 40px; height: 40px; border: none;">
+    </a>
+    <!-- Github Repository -->
+    <a href="https://github.com/Bluntman8338/McWebsite" target="_blank" rel="noopener noreferrer">
+      <img src="https://gyazo.com/eea9d060e119f1b6334564cf0cd629e8.png" alt="GitHub Repository" style="background-color: transparent; width: 50px; height: 50px; border: none;">
+    </a>
+  </div>
 
   <footer>
-    <p>&copy; McServer 2024<br>
+    <p>&copy; Mc8338 2024<br>
       Powered By <a href="https://poggit.pmmp.io/plugins" target="_blank" style="color: #0000EE; text-decoration: underline;">PocketMine</a>
       <br>
       Not affiliated with © Mojang AB 2009 - 2024
