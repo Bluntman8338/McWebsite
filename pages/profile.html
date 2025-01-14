@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <div>
+        <img src="<?= htmlspecialchars($user['profile_picture_url']) ?: 'default-profile.png'; ?>" alt="Profile Picture" width="150">
+    </div>
+    <p><strong>Name:</strong> <?= htmlspecialchars($user['name']); ?></p>
+    <p><strong>Minecraft Username:</strong> <?= htmlspecialchars($user['mc_username']); ?></p>
+    <p><strong>Discord Username:</strong> <?= htmlspecialchars($user['discord_username']); ?></p>
+    <p><strong>Email:</strong> <?= htmlspecialchars($user['email']); ?></p>
+    <p><strong>Date of Registration:</strong> <?= htmlspecialchars($user['date_of_registration']); ?></p>
+    <p><strong>Role:</strong> <?= htmlspecialchars($user['role_access']); ?></p>
+    <p><strong>Last Login:</strong> <?= htmlspecialchars($user['last_login_date']); ?></p>
+    <p><strong>IP Address:</strong> <?= htmlspecialchars($user['ip_address']); ?></p>
+    <p><strong>Status:</strong> <?= htmlspecialchars($user['account_status']); ?></p>
+    <p><strong>Country:</strong> <?= htmlspecialchars($user['country_location']); ?></p>
+</body>
+</html>
