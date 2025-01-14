@@ -202,3 +202,215 @@ footer {
   margin-top: auto;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
+
+/* Profile Section Styling */
+.profile-container {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #3e2914;
+  border: 2px solid #6e4820;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.profile-info {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.profile-btn {
+  background-color: #FFAA00;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-btn:hover {
+  background-color: #FFD700;
+}
+
+.activity-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #3C5114;
+  border: 2px solid #3C5114;
+  border-radius: 10px;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-list li {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Ensures items are spread out */
+  padding: 0 20px;
+}
+
+.login-link {
+  margin-left: auto;
+  /* Push the login link to the far right */
+  text-decoration: none;
+  color: #5aab4f;
+  /* Match the theme color */
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  /* Add an underline on hover for better UX */
+}
+
+/* Profile Section Styling */
+.profile-container {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #3e2914;
+  border: 2px solid #6e4820;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.profile-info {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.profile-btn {
+  background-color: #FFAA00;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-btn:hover {
+  background-color: #FFD700;
+}
+
+.activity-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #3C5114;
+  border: 2px solid #3C5114;
+  border-radius: 10px;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-list li {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Adjusting form width for better layout */
+.login-form-container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.login-form-container input,
+.login-form-container button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-form-container a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Adjusting the form container */
+.register-form-container {
+  width: 300px;
+  /* Adjusted width to fit better */
+  margin: 40px auto;
+  /* Centered with some margin */
+  background-color: #41C4F7;
+  /* Unique background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure box-sizing works as expected */
+.register-form-container input,
+.register-form-container button {
+  width: 100%;
+  margin-bottom: 15px;
+  /* Consistent spacing */
+  box-sizing: border-box;
+  /* Correct box sizing */
+}
+
+.register-form-container button {
+  background-color: #0033CC;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.register-form-container button:hover {
+  background-color: #0026A1;
+}
+
+.register-form-container a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.register-form-container a:hover {
+  text-decoration: underline;
+}
