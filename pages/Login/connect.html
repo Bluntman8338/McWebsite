@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend to Backend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #response {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Connect Frontend to Backend</h1>
+    <button id="connectBtn">Connect</button>
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('connectBtn').addEventListener('click', async () => {
+            const responseElement = document.getElementById('response');
+            responseElement.innerText = 'Connecting...';
+
+            try {
+                const response = await fetch('http://localhost/McWebsite/api.php');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                responseElement.innerText = data.message;
+            } catch (error) {
+                console.error('Error connecting to backend:', error);
+                responseElement.innerText = 'Failed to connect to backend.';
+            }
+        });
+    </script>
+</body>
+</html>
